@@ -2,7 +2,6 @@ import "./App.css";
 import { Routes, Route } from "react-router";
 
 // pages
-import Home from './pages/Home';
 import PhoneDetails from './pages/PhoneDetails';
 import PhoneList from "./pages/PhoneList";
 import Error from './pages/Error';
@@ -17,7 +16,6 @@ function App() {
       <Navbar />
 
       <Routes>
-        <Route path="/" element={<Home />} />
         <Route path="/phones" element={<PhoneList />} />
         <Route path="/phones/:id" element={<PhoneDetails />} />
     

@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import { getAllPhonesDetails } from '../services/phones.services'
 import { useNavigate, useParams} from 'react-router-dom'
 import { DotLoader } from 'react-spinners'
+import Card from "react-bootstrap/Card"
 
 function PhoneDetails() {
 
@@ -32,25 +33,31 @@ function PhoneDetails() {
   }
   return (
     <div>
-
       <h3>Details Phone</h3>
-      <br />
-      <p>{details.name}</p>
-      <br />
-      <p>{details.manufacturer}</p>
-      <br />
-      <p>{details.description}</p>
-      <br />
-      <p>{details.color}</p>
-      <br />
-      <p>{details.price}</p>
-      <br />
-      <p>{details.imageFileName}</p>
-      <br />
-      <p>{details.screen}</p>
-      <br />
-      <p>{details.ram}</p>
 
+      <Card>
+      
+      <br />
+      <Card.Img variant="top" scr={details.imageFileName} alt="imagenPhone" width={500} />
+      <br />
+       <Card.Body>
+          <Card.Text>
+              <p><strong>Name: </strong>Name:{details.name}</p> 
+              <br />
+              <p><strong>Manufacturer: </strong>{details.manufacturer}</p>
+              <br />
+              <p><strong>Description: </strong>{details.description}</p>
+              <br />
+              <p><strong>Color: </strong>{details.color}</p>
+              <br />
+              <p><strong>Price: </strong>{details.price}</p>
+              <br />
+              <p><strong>Screen:</strong>{details.screen}</p>
+              <br />
+              <p><strong>Ram: </strong>{details.ram}</p>
+          </Card.Text>
+        </Card.Body>
+      </Card>
     </div>
   );
 }
